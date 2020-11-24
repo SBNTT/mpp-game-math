@@ -1,7 +1,7 @@
 @file:Suppress("UNUSED_VARIABLE")
 
 plugins {
-    kotlin("multiplatform") version "1.4.20"
+    kotlin("multiplatform")
     id("maven-publish")
 }
 
@@ -10,7 +10,6 @@ version = "0.1.0"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 kotlin {
