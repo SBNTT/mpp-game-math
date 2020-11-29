@@ -46,4 +46,8 @@ data class Vec2(var x: Float, var y: Float) : Vec<Vec2>() {
 
     override fun asArray() = arrayOf(x, y)
 
+    override fun toString(): String {
+        return "Vec2(x=$x, y=$y)"
+    }
+
 }

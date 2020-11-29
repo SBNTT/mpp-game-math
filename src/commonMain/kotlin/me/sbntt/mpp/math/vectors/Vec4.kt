@@ -46,4 +46,8 @@ data class Vec4(var x: Float, var y: Float, var z: Float, var w: Float) : Vec<Ve
 
     override fun asArray() = arrayOf(x, y, z, w)
 
+    override fun toString(): String {
+        return "Vec4(x=$x, y=$y, z=$z, w=$w)"
+    }
+
 }

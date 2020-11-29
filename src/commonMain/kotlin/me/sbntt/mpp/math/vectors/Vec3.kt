@@ -52,4 +52,8 @@ data class Vec3(var x: Float, var y: Float, var z: Float) : Vec<Vec3>() {
 
     override fun asArray() = arrayOf(x, y, z)
 
+    override fun toString(): String {
+        return "Vec3(x=$x, y=$y, z=$z)"
+    }
+
 }
