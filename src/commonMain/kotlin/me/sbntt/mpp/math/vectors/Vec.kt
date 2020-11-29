@@ -1,7 +1,15 @@
-package me.sbntt.mpp.math
+package me.sbntt.mpp.math.vectors
 
 import kotlin.math.pow
 
+/**
+ * ### Parent of all vectors
+ *
+ * it contains basics operations that can be done on/with a vector.
+ *
+ * @param T the type of the concrete implementation.
+ * ensure generic type safety.
+ */
 abstract class Vec<T : Vec<T>> {
 
     abstract class VecCompanion<T : Vec<T>> {

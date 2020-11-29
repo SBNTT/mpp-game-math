@@ -1,4 +1,4 @@
-package me.sbntt.mpp.math
+package me.sbntt.mpp.math.vectors
 
 import kotlin.math.sqrt
 
