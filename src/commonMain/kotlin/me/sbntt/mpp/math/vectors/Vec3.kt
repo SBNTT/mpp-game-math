@@ -2,11 +2,11 @@ package me.sbntt.mpp.math.vectors
 
 import kotlin.math.sqrt
 
-data class Vec3(var x: Float, var y: Float, var z: Float) : Vec<Vec3>() {
+data class Vec3(var x: Double, var y: Double, var z: Double) : Vec<Vec3>() {
 
-    constructor(x: Number, y: Number, z: Number) : this(x.toFloat(), y.toFloat(), z.toFloat())
+    constructor(x: Number, y: Number, z: Number) : this(x.toDouble(), y.toDouble(), z.toDouble())
 
-    constructor(v: Number) : this(v.toFloat(), v.toFloat(), v.toFloat())
+    constructor(v: Number) : this(v.toDouble(), v.toDouble(), v.toDouble())
 
     companion object : VecCompanion<Vec3>() {
 
@@ -27,14 +27,14 @@ data class Vec3(var x: Float, var y: Float, var z: Float) : Vec<Vec3>() {
     override fun times(other: Vec3) = Vec3(x * other.x, y * other.y, z * other.z)
 
     override fun times(scale: Number): Vec3 {
-        val scaleF = scale.toFloat()
+        val scaleF = scale.toDouble()
         return Vec3(x * scaleF, y * scaleF, z * scaleF)
     }
 
     override fun div(other: Vec3) = Vec3(x / other.x, y / other.y, z / other.z)
 
     override fun div(scale: Number): Vec3 {
-        val scaleF = scale.toFloat()
+        val scaleF = scale.toDouble()
         return Vec3(x / scaleF, y / scaleF, z / scaleF)
     }
 

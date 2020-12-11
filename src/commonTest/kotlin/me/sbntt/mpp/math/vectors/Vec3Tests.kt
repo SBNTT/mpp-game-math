@@ -10,9 +10,9 @@ class Vec3Tests {
     @Test
     fun testConstructor() {
         val vec = Vec3(1, 2, 3)
-        assertEquals(vec.x, 1F)
-        assertEquals(vec.y, 2F)
-        assertEquals(vec.z, 3F)
+        assertEquals(vec.x, 1.0)
+        assertEquals(vec.y, 2.0)
+        assertEquals(vec.z, 3.0)
     }
 
     @Test
@@ -37,7 +37,7 @@ class Vec3Tests {
 
     @Test
     fun dotProductTest() {
-        assertEquals(Vec3(-6, 8, 3) dot Vec3(5, 12, 6), 84F)
+        assertEquals(Vec3(-6, 8, 3) dot Vec3(5, 12, 6), 84.0)
     }
 
     @Test
@@ -53,7 +53,7 @@ class Vec3Tests {
 
     @Test
     fun lengthTest() {
-        assertEquals(Vec3(12, 4, 3).length(), 13F)
+        assertEquals(Vec3(12, 4, 3).length(), 13.0)
     }
 
     @Test
@@ -86,7 +86,7 @@ class Vec3Tests {
 
     @Test
     fun testAsArray() {
-        assertTrue(Vec3(1, 2, 3).asArray() contentEquals arrayOf(1F, 2F, 3F))
+        assertTrue(Vec3(1, 2, 3).asArray() contentEquals arrayOf(1.0, 2.0, 3.0))
     }
 
     @Test

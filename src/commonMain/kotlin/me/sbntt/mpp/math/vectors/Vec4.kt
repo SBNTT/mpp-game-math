@@ -2,11 +2,11 @@ package me.sbntt.mpp.math.vectors
 
 import kotlin.math.sqrt
 
-data class Vec4(var x: Float, var y: Float, var z: Float, var w: Float) : Vec<Vec4>() {
+data class Vec4(var x: Double, var y: Double, var z: Double, var w: Double) : Vec<Vec4>() {
 
-    constructor(x: Number, y: Number, z: Number, w: Number) : this(x.toFloat(), y.toFloat(), z.toFloat(), w.toFloat())
+    constructor(x: Number, y: Number, z: Number, w: Number) : this(x.toDouble(), y.toDouble(), z.toDouble(), w.toDouble())
 
-    constructor(v: Number) : this(v.toFloat(), v.toFloat(), v.toFloat(), v.toFloat())
+    constructor(v: Number) : this(v.toDouble(), v.toDouble(), v.toDouble(), v.toDouble())
 
     companion object : VecCompanion<Vec4>() {
 
@@ -27,14 +27,14 @@ data class Vec4(var x: Float, var y: Float, var z: Float, var w: Float) : Vec<Ve
     override fun times(other: Vec4) = Vec4(x * other.x, y * other.y, z * other.z, w * other.w)
 
     override fun times(scale: Number): Vec4 {
-        val scaleF = scale.toFloat()
+        val scaleF = scale.toDouble()
         return Vec4(x * scaleF, y * scaleF, z * scaleF, w * scaleF)
     }
 
     override fun div(other: Vec4) = Vec4(x / other.x, y / other.y, z / other.z, w / other.w)
 
     override fun div(scale: Number): Vec4 {
-        val scaleF = scale.toFloat()
+        val scaleF = scale.toDouble()
         return Vec4(x / scaleF, y / scaleF, z / scaleF, w / scaleF)
     }
 

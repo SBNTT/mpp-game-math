@@ -34,24 +34,24 @@ abstract class Vec<T : Vec<T>> {
 
     abstract operator fun unaryMinus(): T
 
-    abstract infix fun dot(other: T): Float
+    abstract infix fun dot(other: T): Double
 
-    abstract fun length(): Float
+    abstract fun length(): Double
 
-    abstract fun asArray(): Array<Float>
+    abstract fun asArray(): Array<Double>
 
     fun normalize(): T = this / length()
 
     fun interpolate(other: T, factor: Number): T {
-        return this * (1 - factor.toFloat()) + other * factor
+        return this * (1 - factor.toDouble()) + other * factor
     }
 
     fun isNear(other: T, threshold: Number, strict: Boolean = false): Boolean {
         val sub = (this - other)
         return if (strict)
-            sub dot sub < threshold.toFloat().pow(2)
+            sub dot sub < threshold.toDouble().pow(2)
         else
-            sub dot sub <= threshold.toFloat().pow(2)
+            sub dot sub <= threshold.toDouble().pow(2)
     }
 
 }

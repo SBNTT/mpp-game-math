@@ -10,10 +10,10 @@ class Vec4Tests {
     @Test
     fun testConstructor() {
         val vec = Vec4(1, 2, 3, 4)
-        assertEquals(vec.x, 1F)
-        assertEquals(vec.y, 2F)
-        assertEquals(vec.z, 3F)
-        assertEquals(vec.w, 4F)
+        assertEquals(vec.x, 1.0)
+        assertEquals(vec.y, 2.0)
+        assertEquals(vec.z, 3.0)
+        assertEquals(vec.w, 4.0)
     }
 
     @Test
@@ -38,7 +38,7 @@ class Vec4Tests {
 
     @Test
     fun dotProductTest() {
-        assertEquals(Vec4(-6, 8, 3, 2) dot Vec4(5, 12, 6, 5), 94F)
+        assertEquals(Vec4(-6, 8, 3, 2) dot Vec4(5, 12, 6, 5), 94.0)
     }
 
     @Test
@@ -49,7 +49,7 @@ class Vec4Tests {
 
     @Test
     fun lengthTest() {
-        assertEquals(Vec4(48, 6, 6, 5).length(), 49F)
+        assertEquals(Vec4(48, 6, 6, 5).length(), 49.0)
     }
 
     @Test
@@ -82,7 +82,7 @@ class Vec4Tests {
 
     @Test
     fun testAsArray() {
-        assertTrue(Vec4(1, 2, 3, 4).asArray() contentEquals arrayOf(1F, 2F, 3F, 4F))
+        assertTrue(Vec4(1, 2, 3, 4).asArray() contentEquals arrayOf(1.0, 2.0, 3.0, 4.0))
     }
 
     @Test
