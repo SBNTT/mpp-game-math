@@ -3,7 +3,7 @@ package me.sbntt.mpp.math.vectors
 import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.differentThan
 import kotlin.math.sqrt
 
-data class Vec3(var x: Double, var y: Double, var z: Double) : Vec<Vec3>() {
+class Vec3(var x: Double, var y: Double, var z: Double) : Vec<Vec3>() {
 
     constructor(x: Number, y: Number, z: Number) : this(x.toDouble(), y.toDouble(), z.toDouble())
 
@@ -28,15 +28,15 @@ data class Vec3(var x: Double, var y: Double, var z: Double) : Vec<Vec3>() {
     override fun times(other: Vec3) = Vec3(x * other.x, y * other.y, z * other.z)
 
     override fun times(scale: Number): Vec3 {
-        val scaleF = scale.toDouble()
-        return Vec3(x * scaleF, y * scaleF, z * scaleF)
+        val scaleD = scale.toDouble()
+        return Vec3(x * scaleD, y * scaleD, z * scaleD)
     }
 
     override fun div(other: Vec3) = Vec3(x / other.x, y / other.y, z / other.z)
 
     override fun div(scale: Number): Vec3 {
-        val scaleF = scale.toDouble()
-        return Vec3(x / scaleF, y / scaleF, z / scaleF)
+        val scaleD = scale.toDouble()
+        return Vec3(x / scaleD, y / scaleD, z / scaleD)
     }
 
     override fun unaryMinus() = Vec3(-x, -y, -z)
