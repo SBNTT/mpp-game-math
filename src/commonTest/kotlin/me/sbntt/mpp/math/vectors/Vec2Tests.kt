@@ -1,6 +1,6 @@
 package me.sbntt.mpp.math.vectors
 
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.eq
+import me.sbntt.mpp.math.extensions.comparators.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse

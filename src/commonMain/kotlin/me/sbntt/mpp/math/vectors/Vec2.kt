@@ -1,6 +1,6 @@
 package me.sbntt.mpp.math.vectors
 
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.differentThan
+import me.sbntt.mpp.math.extensions.comparators.*
 import kotlin.math.sqrt
 
 class Vec2(var x: Double, var y: Double) : Vec<Vec2>() {

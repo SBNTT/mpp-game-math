@@ -1,24 +1,14 @@
 package me.sbntt.mpp.math.extensions
 
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.differentThan
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.dt
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.eq
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.geq
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.greaterOrEquals
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.greaterThan
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.gt
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.leq
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.lowerOrEquals
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.lowerThan
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.lt
+import me.sbntt.mpp.math.extensions.comparators.*
 import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class NumericComparisonsTests {
+class DoubleComparatorTests {
 
     @Test
-    fun doubleEquals() {
+    fun testEquals() {
         assertTrue { 1.0 eq 1.0 }
         assertTrue { 1.0 eq 0.999999999999999 }
         assertTrue { 1.1 - 1.0 eq 0.1 }
@@ -35,7 +25,7 @@ class NumericComparisonsTests {
     }
 
     @Test
-    fun doubleGreaterThan() {
+    fun testGreaterThan() {
         assertTrue { 2.0 gt 1.0 }
         assertTrue { 2.0 greaterThan 1.0 }
         assertFalse { 1.0 gt 0.999999999999999 }
@@ -44,7 +34,7 @@ class NumericComparisonsTests {
     }
 
     @Test
-    fun doubleLowerThan() {
+    fun testLowerThan() {
         assertTrue { 1.0 lt 2.0 }
         assertTrue { 1.0 lowerThan 2.0 }
         assertFalse { 0.999999999999999 lt 1.0 }
@@ -53,7 +43,7 @@ class NumericComparisonsTests {
     }
 
     @Test
-    fun doubleGreaterOrEquals() {
+    fun testGreaterOrEquals() {
         assertTrue { 2.0 geq 1.0 }
         assertTrue { 2.0 greaterOrEquals 1.0 }
         assertTrue { 1.0 geq 0.999999999999999 }
@@ -64,7 +54,7 @@ class NumericComparisonsTests {
     }
 
     @Test
-    fun doubleLowerOrEquals() {
+    fun testLowerOrEquals() {
         assertTrue { 1.0 leq 2.0 }
         assertTrue { 1.0 lowerOrEquals  2.0 }
         assertTrue { 0.999999999999999 leq 1.0 }

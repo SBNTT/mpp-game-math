@@ -1,7 +1,6 @@
 package me.sbntt.mpp.math.vectors
 
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.lowerOrEquals
-import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.lowerThan
+import me.sbntt.mpp.math.extensions.comparators.*
 import kotlin.math.pow
 
 /**
