@@ -1,5 +1,6 @@
 package me.sbntt.mpp.math.vectors
 
+import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.differentThan
 import kotlin.math.sqrt
 
 data class Vec3(var x: Double, var y: Double, var z: Double) : Vec<Vec3>() {
@@ -51,6 +52,16 @@ data class Vec3(var x: Double, var y: Double, var z: Double) : Vec<Vec3>() {
     override fun length() = sqrt(x * x + y * y + z * z)
 
     override fun asArray() = arrayOf(x, y, z)
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Vec3) return false
+        return !(x differentThan other.x || y differentThan other.y || z differentThan other.z)
+    }
+
+    override fun hashCode(): Int {
+        return 31 * x.hashCode() + y.hashCode() + z.hashCode()
+    }
 
     override fun toString(): String {
         return "Vec3(x=$x, y=$y, z=$z)"

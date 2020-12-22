@@ -56,4 +56,8 @@ abstract class Vec<T : Vec<T>> {
             sub dot sub lowerOrEquals threshold.toDouble().pow(2)
     }
 
+    abstract override fun equals(other: Any?): Boolean
+
+    abstract override fun hashCode(): Int
+
 }

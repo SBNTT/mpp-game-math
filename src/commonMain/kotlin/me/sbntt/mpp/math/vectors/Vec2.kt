@@ -1,5 +1,6 @@
 package me.sbntt.mpp.math.vectors
 
+import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.differentThan
 import kotlin.math.sqrt
 
 data class Vec2(var x: Double, var y: Double) : Vec<Vec2>() {
@@ -45,6 +46,15 @@ data class Vec2(var x: Double, var y: Double) : Vec<Vec2>() {
     override fun length() = sqrt(x * x + y * y)
 
     override fun asArray() = arrayOf(x, y)
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        return !(other !is Vec2 || x differentThan other.x || y differentThan other.y)
+    }
+
+    override fun hashCode(): Int {
+        return 31 * x.hashCode() + y.hashCode()
+    }
 
     override fun toString(): String {
         return "Vec2(x=$x, y=$y)"
