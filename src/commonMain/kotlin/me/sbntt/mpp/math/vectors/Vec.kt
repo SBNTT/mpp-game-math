@@ -1,5 +1,7 @@
 package me.sbntt.mpp.math.vectors
 
+import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.lowerOrEquals
+import me.sbntt.mpp.math.extensions.comparators.DoubleComparator.lowerThan
 import kotlin.math.pow
 
 /**
@@ -49,9 +51,9 @@ abstract class Vec<T : Vec<T>> {
     fun isNear(other: T, threshold: Number, strict: Boolean = false): Boolean {
         val sub = (this - other)
         return if (strict)
-            sub dot sub < threshold.toDouble().pow(2)
+            sub dot sub lowerThan threshold.toDouble().pow(2)
         else
-            sub dot sub <= threshold.toDouble().pow(2)
+            sub dot sub lowerOrEquals threshold.toDouble().pow(2)
     }
 
 }
