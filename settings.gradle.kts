@@ -2,6 +2,6 @@ rootProject.name = "mpp-game-math"
 
 pluginManagement {
     plugins {
-        kotlin("multiplatform") version "1.4.20"
+        kotlin("multiplatform") version "1.4.21"
     }
 }
