@@ -14,9 +14,9 @@ class DegreesTests {
     fun testConstructor() {
         assertTrue { 4.degrees.value eq 4.0 }
         assertTrue { 0.degrees.value eq 0.0 }
-        //assertEquals(360.degrees.value, 0.0)
-        //assertEquals(361.degrees.value, 1.0)
-        //assertEquals(-2.degrees.value, 358)
+        assertTrue { 360.degrees.value eq 0.0 }
+        assertTrue { 361.degrees.value eq 1.0 }
+        assertTrue { (-2).degrees.value eq 358.0 }
     }
 
     @Test

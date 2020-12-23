@@ -1,6 +1,6 @@
 package me.sbntt.mpp.math.units.abstracts
 
-abstract class MathUnit<T : Comparable<T>, C>(var value: T) : Comparable<C> {
+abstract class MathUnit<T : Comparable<T>, C>(open var value: T) : Comparable<C> {
 
     abstract fun valueEquals(other: MathUnit<*, *>): Boolean
 

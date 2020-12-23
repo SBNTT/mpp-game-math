@@ -1,13 +1,20 @@
 package me.sbntt.mpp.math.units
 
+import me.sbntt.mpp.math.extensions.coerceCircularIn
 import me.sbntt.mpp.math.units.abstracts.DoubleMathUnit
 import me.sbntt.mpp.math.units.Radians.Extensions.radians
 import kotlin.math.PI
 
 class Degrees private constructor(value: Double) : DoubleMathUnit<Degrees>(value) {
 
-    companion object Extensions {
-        val Number.degrees get() = Degrees(this.toDouble())
+    override var value: Double = value coerceCircularIn MIN_VALUE .. MAX_VALUE
+        set(value) {
+            field = value coerceCircularIn MIN_VALUE .. MAX_VALUE
+        }
+
+    companion object {
+        const val MIN_VALUE = 0.0
+        const val MAX_VALUE = 360.0
     }
 
     fun toRadians(): Radians {
@@ -17,6 +24,10 @@ class Degrees private constructor(value: Double) : DoubleMathUnit<Degrees>(value
         }
 
         return (value * PI / 180.0).radians
+    }
+
+    object Extensions {
+        val Number.degrees get() = Degrees(this.toDouble())
     }
 
     private object RadiansConversion {

@@ -13,6 +13,9 @@ class RadiansTests {
     @Test
     fun testConstructor() {
         assertTrue { 4.radians.value eq 4.0 }
+        assertTrue { (2 * PI).radians.value eq 0.0 }
+        assertTrue { (3 * PI).radians.value eq PI }
+        assertTrue { (-PI).radians.value eq PI }
     }
 
     @Test
