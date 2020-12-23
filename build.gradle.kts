@@ -13,6 +13,8 @@ repositories {
 }
 
 kotlin {
+    jvm()
+
     macosX64()
     mingwX64(); mingwX86()
     linuxX64(); linuxArm64(); linuxArm32Hfp(); linuxMips32(); linuxMipsel32()
@@ -78,19 +80,19 @@ tasks {
     }
 
     val buildFromLinux by registering {
-        (tasksFiltering("compile", "", false, "android", "linux", "wasm", "js") + "jsJar").forEach {
+        (tasksFiltering("compile", "", false, "android", "linux", "wasm", "js") + "jsJar" + "jvmJar").forEach {
             dependsOn(this@tasks.getByName(it))
         }
     }
 
     val testFromLinux by registering {
-        tasksFiltering("", "", true, "android", "linux", "wasm", "js").forEach {
+        tasksFiltering("", "", true, "android", "linux", "wasm", "js", "jvm").forEach {
             dependsOn(this@tasks.getByName(it))
         }
     }
 
     val publishFromLinux by registering {
-        tasksFiltering("publish", "GitHubPackagesRepository", false, "android", "linux", "wasm", "js").forEach {
+        tasksFiltering("publish", "GitHubPackagesRepository", false, "android", "linux", "wasm", "js", "jvm").forEach {
             dependsOn(this@tasks.getByName(it))
         }
     }
